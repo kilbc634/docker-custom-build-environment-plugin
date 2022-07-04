@@ -5,3 +5,9 @@ have adequate owner and permission set. Side effect is you can't configure the u
 For many usages this restriction can be frustrating, so as a workaround you can configure user's group ID
 to gain extra privileges in your container. For sample, if you want to run
 <a href="https://github.com/jpetazzo/dind">Docker in Docker</a>, you can set group as '<code>docker</code>'.
+<p>
+<hr>
+<b>Extra Feature</b><br>
+You can set the full <code>--user</code> argument with ":", will force to use this user group setting
+for '<code>docker exec</code>' command. (For example. Set <code>0:0</code> equal <code>--user 0:0</code>,
+set <code>1000</code> equal <code>--user ${UID}:1000</code>)

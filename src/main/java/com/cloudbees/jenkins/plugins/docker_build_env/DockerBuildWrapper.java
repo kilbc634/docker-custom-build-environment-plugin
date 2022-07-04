@@ -257,7 +257,16 @@ public class DockerBuildWrapper extends BuildWrapper {
             launcher.launch().cmds("id", "-g").stdout(bos2).quiet(true).join();
             gid = bos2.toString().trim();
         }
-        return uid+":"+gid;
+
+        String userGroup;
+        if (group.contains(":")){
+            userGroup = group.replaceAll("\\s+","");
+            LOGGER.log(Level.FINE, "Force set user group to "+userGroup);
+        }
+        else {
+            userGroup = uid+":"+gid;
+        }
+        return userGroup;
 
     }
 
