@@ -2,6 +2,8 @@
 
 Fork from https://github.com/jenkinsci/docker-custom-build-environment-plugin/pull/61
 
+Use `mvn package` to build target/docker-custom-build-environment.hpi file, and upload plugin for jenkins
+
 ---
 
 **Origin README:**
